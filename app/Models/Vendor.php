@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Vendor extends Model
 {
     use HasFactory;
+
+    public function cabang()
+    {
+        return $this->hasMany(Cabang::class);
+    }
 }
