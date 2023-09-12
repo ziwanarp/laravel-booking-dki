@@ -9,6 +9,9 @@ class Layanan extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'kode_layanan';
+    public $incrementing = false;
+
     public function jabatan()
     {
         return $this->belongsTo(Jabatan::class);

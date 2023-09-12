@@ -9,6 +9,9 @@ class Cabang extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'kode_cabang';
+    public $incrementing = false;
+
     public function vendor()
     {
         return $this->belongsTo(Vendor::class);

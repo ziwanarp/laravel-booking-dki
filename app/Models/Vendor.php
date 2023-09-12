@@ -9,6 +9,9 @@ class Vendor extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id_vendor';
+    public $incrementing = false;
+
     public function cabang()
     {
         return $this->hasMany(Cabang::class);
