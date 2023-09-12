@@ -17,6 +17,7 @@ class CreateCabangsTable extends Migration
             $table->string('kode_cabang',3)->primary();
             $table->string('nama_cabang',255);
             $table->foreignId('id_vendor');
+            $table->string('vendor');
             $table->string('latitude',255);
             $table->string('longitude',255);
             $table->text('alamat');
