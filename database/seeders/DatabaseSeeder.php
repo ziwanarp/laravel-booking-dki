@@ -233,34 +233,38 @@ class DatabaseSeeder extends Seeder
         \App\Models\Cabang::create([
             'kode_cabang' => '108',
             'id_vendor' => '76880',
+            'vendor' => 'Telkom',
             'nama_cabang' => 'KC Balaikota',
-            'latitude' => '0',
-            'longitude' => '0',
-            'alamat' => 'null',
+            'latitude' => '-6.181040258599871',
+            'longitude' => '106.8280337890692',
+            'alamat' => 'Jl. Medan Merdeka Sel. No.8, RT.11/RW.9, Gambir, Kecamatan Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110',
         ]);
         \App\Models\Cabang::create([
             'kode_cabang' => '111',
             'id_vendor' => '76880',
+            'vendor' => 'Telkom',
             'nama_cabang' => 'KC Walikota Jakarta Pusat',
-            'latitude' => '0',
-            'longitude' => '0',
-            'alamat' => 'null',
+            'latitude' => '-6.173649989401135',
+            'longitude' => '106.81855376548705',
+            'alamat' => 'Jl. Tanah Abang I No. 1, Kel. Petojo Selatan, Kec. Gambir, RT.14/RW.8, Petojo Sel., Kecamatan Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10160',
         ]);
         \App\Models\Cabang::create([
             'kode_cabang' => '201',
             'id_vendor' => '76880',
+            'vendor' => 'Telkom',
             'nama_cabang' => 'KC Walikota Jakarta Utara',
-            'latitude' => '0',
-            'longitude' => '0',
-            'alamat' => 'null',
+            'latitude' => '-6.120258478295213',
+            'longitude' => '106.89302694160084',
+            'alamat' => 'Gedung Walikota Jakarta Utara, Jl. Yos Sudarso No. 27-29, Kel. Kebon Bawang, Kec. Tanjung Priok, RT.19/RW.5, Kb. Bawang, Kec. Tj. Priok, Jkt Utara, Daerah Khusus Ibukota Jakarta 14320',
         ]);
         \App\Models\Cabang::create([
             'kode_cabang' => '404',
             'id_vendor' => '76880',
+            'vendor' => 'Telkom',
             'nama_cabang' => 'KC Walikota Jakarta Selatan',
-            'latitude' => '0',
-            'longitude' => '0',
-            'alamat' => 'null',
+            'latitude' => '-6.248086181577543',
+            'longitude' => '106.80752377999265',
+            'alamat' => 'Gd. Walikotama, Jl. Prapanca Raya No.9, RT.1/RW.1, Petogogan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12170',
         ]);
 
 
