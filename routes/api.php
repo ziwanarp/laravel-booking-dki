@@ -23,3 +23,7 @@ use App\Http\Controllers\LayananController;
 Route::post('v1/list-layanan', [LayananController::class, 'listLayanan']);
 Route::post('v1/list-jabatan', [JabatanController::class, 'listJabatan']);
 Route::post('v1/list-cabang', [CabangController::class, 'listCabang']);
+
+// if routing !found (GET)
+Route::fallback(function () { return response()->json([ 'status_code' => 404,'status_message' => 'not found'],404);});
+
