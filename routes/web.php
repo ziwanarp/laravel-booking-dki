@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FallbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-// if routing !found (GET)
-Route::fallback(function () { return response()->json([ 'status_code' => 404,'status_message' => 'not found'],404);});
+// if route !found
+Route::any('{any}', [FallbackController::class, 'index'])->where('any', '.*');
 
 

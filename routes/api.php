@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CabangController;
+use App\Http\Controllers\FallbackController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\LayananController;
@@ -16,14 +17,11 @@ use App\Http\Controllers\LayananController;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
 
 Route::post('v1/list-layanan', [LayananController::class, 'listLayanan']);
 Route::post('v1/list-jabatan', [JabatanController::class, 'listJabatan']);
 Route::post('v1/list-cabang', [CabangController::class, 'listCabang']);
 
-// if routing !found (GET)
-Route::fallback(function () { return response()->json([ 'status_code' => 404,'status_message' => 'not found'],404);});
+// if route !found
+Route::any('{any}', [FallbackController::class, 'index'])->where('any', '.*');
 
