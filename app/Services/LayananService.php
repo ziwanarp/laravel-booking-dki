@@ -2,12 +2,20 @@
 namespace App\Services;
 
 use App\Models\Layanan;
+use App\Repositories\LayananRepository;
 
 class LayananService
 {
+    protected $repository;
+
+    public function __construct(LayananRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function listLayanan($request)
     {
-        $layanan =  Layanan::select('kode_layanan', 'nama_layanan')->where('jabatan_id',$request->id_jabatan)->get();
+        $layanan = $this->repository->listLayanan($request);
 
         if(count($layanan) == 0) {
             $status_code = "01";

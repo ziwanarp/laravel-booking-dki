@@ -1,13 +1,20 @@
 <?php
 namespace App\Services;
 
-use App\Models\Cabang;
+use App\Repositories\CabangRepository;
 
 class CabangService
 {
+    protected $repository;
+
+    public function __construct(CabangRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function listCabang()
     {
-        $cabang = Cabang::select('kode_cabang', 'id_vendor','vendor','latitude', 'longitude', 'alamat')->get();
+        $cabang = $this->repository->listCabang();
 
         if(count($cabang) == 0) {
             $status_code = "01";

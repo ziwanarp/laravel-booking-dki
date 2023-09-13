@@ -1,13 +1,19 @@
 <?php
 namespace App\Services;
 
-use App\Models\Jabatan;
+use App\Repositories\JabatanRepository;
 
 class JabatanService
 {
+    protected $repository;
+
+    public function __construct(JabatanRepository $repository)
+    {
+        $this->repository = $repository;
+    }
     public function listJabatan()
     {
-        $jabatan = Jabatan::select('id_jabatan','nama_jabatan')->get();
+        $jabatan = $this->repository->listJabatan();;
 
         if(count($jabatan) == 0) {
             $status_code = "01";
