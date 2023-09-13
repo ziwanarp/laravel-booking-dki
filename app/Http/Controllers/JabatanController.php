@@ -2,27 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Jabatan;
+use App\Services\JabatanService;
 
 class JabatanController extends Controller
 {
-   public function listJabatan (){
-    $jabatan = Jabatan::select('id_jabatan','nama_jabatan')->get();
+    protected $service;
 
-    if(count($jabatan) == 0) {
-        $status_code = "01";
-        $status_message = "gagal";
-    } else {
-        $status_code = "00";
-        $status_message = "sukses";
+    public function __construct(JabatanService $service){
+        $this->service = $service;
     }
-     
-    $data = [
-        "status_code" => $status_code,
-        "status_message" => $status_message,
-        "data" => $jabatan,
-    ];
 
-    return response()->json($data,200);
-   }
+    public function listJabatan (){
+        return $this->service->listJabatan();
+    }
 }

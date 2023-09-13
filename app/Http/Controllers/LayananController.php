@@ -2,29 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Layanan;
 use Illuminate\Http\Request;
+use App\Services\LayananService;
 
 class LayananController extends Controller
 {
+    protected $service;
+
+    public function __construct(LayananService $service){
+        $this->service = $service;
+    }
+
     public function listLayanan (Request $request){
-
-        $layanan =  Layanan::select('kode_layanan', 'nama_layanan')->where('jabatan_id',$request->id_jabatan)->get();
-
-        if(count($layanan) == 0) {
-            $status_code = "01";
-            $status_message = "gagal";
-        } else {
-            $status_code = "00";
-            $status_message = "sukses";
-        }
-         
-        $data = [
-            "status_code" => $status_code,
-            "status_message" => $status_message,
-            "data" => $layanan,
-        ];
-
-        return response()->json($data, 200);
+        return $this->service->listLayanan($request);
     }
 }
