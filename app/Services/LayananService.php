@@ -28,7 +28,9 @@ class LayananService
         $data = [
             "status_code" => $status_code,
             "status_message" => $status_message,
-            "data" => $layanan,
+            "data" => [
+                "list-layanan" => $layanan
+            ],
         ];
 
         return response()->json($data, 200);
